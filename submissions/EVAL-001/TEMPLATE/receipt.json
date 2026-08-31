@@ -10,18 +10,18 @@
   "ai_disclosure": {
     "used": true,
     "tools": ["Codex"],
-    "uses": [],
-    "human_reviewed": true,
-    "notes": "Replace this template with an accurate disclosure."
+    "uses": ["PENDING: replace with actual uses"],
+    "human_reviewed": false,
+    "notes": "Template only. Set human_reviewed true only after the relevant AI-assisted output has actually been reviewed."
   },
   "unaided_claims": [],
   "proctor": null,
   "reproduce": [
-    "replace with clean-clone reproduction command"
+    "PENDING: replace with a real clean-clone reproduction command"
   ],
   "commit_sha": null,
   "score": null,
   "critical_failures": [],
   "status": "draft",
-  "notes": "Template only; not a completed submission."
+  "notes": "Template only; not a completed submission and not portfolio evidence."
 }
