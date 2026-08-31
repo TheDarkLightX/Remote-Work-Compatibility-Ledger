@@ -1,0 +1,35 @@
+name: validate-ledger
+
+on:
+  push:
+    paths:
+      - 'submissions/**/receipt.json'
+      - 'verifiers/validate_receipt.py'
+      - 'schemas/receipt-v1.schema.json'
+  pull_request:
+    paths:
+      - 'submissions/**/receipt.json'
+      - 'verifiers/validate_receipt.py'
+      - 'schemas/receipt-v1.schema.json'
+
+jobs:
+  validate-receipts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate every receipt
+        shell: bash
+        run: |
+          set -euo pipefail
+          mapfile -t receipts < <(find submissions -name receipt.json -type f | sort)
+          if [ ${#receipts[@]} -eq 0 ]; then
+            echo 'No receipts found.'
+            exit 0
+          fi
+          for receipt in "${receipts[@]}"; do
+            echo "Validating $receipt"
+            python verifiers/validate_receipt.py "$receipt"
+          done
