@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/TheDarkLightX/Remote-Work-Compatibility-Ledger/schemas/receipt-v1.schema.json",
+  "title": "Remote Work Compatibility Ledger Receipt v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "benchmark_id",
+    "submission_id",
+    "evidence_mode",
+    "candidate",
+    "ai_disclosure",
+    "reproduce",
+    "status"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "benchmark_id": {"type": "string", "minLength": 1},
+    "submission_id": {"type": "string", "minLength": 1},
+    "candidate": {"type": "string", "minLength": 1},
+    "evidence_mode": {"enum": ["U", "A", "V"]},
+    "started_at": {"type": ["string", "null"]},
+    "completed_at": {"type": ["string", "null"]},
+    "elapsed_minutes": {"type": ["number", "null"], "minimum": 0},
+    "ai_disclosure": {
+      "type": "object",
+      "required": ["used"],
+      "properties": {
+        "used": {"type": "boolean"},
+        "tools": {"type": "array", "items": {"type": "string"}},
+        "uses": {"type": "array", "items": {"type": "string"}},
+        "human_reviewed": {"type": "boolean"},
+        "notes": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "unaided_claims": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "proctor": {"type": ["string", "null"]},
+    "reproduce": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "commit_sha": {"type": ["string", "null"], "pattern": "^[0-9a-f]{40}$"},
+    "score": {"type": ["number", "null"], "minimum": 0, "maximum": 100},
+    "critical_failures": {"type": "array", "items": {"type": "string"}},
+    "status": {"enum": ["draft", "completed", "replayed", "portfolio-ready", "externally-verified"]},
+    "notes": {"type": "string"}
+  }
+}
