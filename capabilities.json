@@ -1,0 +1,109 @@
+{
+  "schema_version": "1.0",
+  "candidate": {
+    "name": "Dana Edwards",
+    "site": "https://www.danaedwards.info/",
+    "github": "https://github.com/TheDarkLightX"
+  },
+  "evidence_modes": {
+    "U": "unaided, candidate-attested unless a proctor is named",
+    "A": "AI-augmented with workflow disclosure",
+    "V": "AI verification/supervision"
+  },
+  "capabilities": [
+    {
+      "id": "ai-evaluation",
+      "label": "AI evaluation and model QA",
+      "status": "benchmark_track_started",
+      "target_roles": ["AI Evaluator", "AI Quality Analyst", "Model Evaluator", "Human-in-the-loop Specialist"],
+      "modes": ["U", "A", "V"],
+      "benchmark_ids": ["EVAL-001"],
+      "existing_evidence": [
+        "https://github.com/TheDarkLightX/Research-Kernel-MCP",
+        "https://github.com/TheDarkLightX/MPRD"
+      ]
+    },
+    {
+      "id": "research-verification",
+      "label": "Research, fact checking, and evidence synthesis",
+      "status": "existing_evidence",
+      "target_roles": ["Research Analyst", "Research Evaluator", "AI Research QA"],
+      "modes": ["A", "V"],
+      "benchmark_ids": [],
+      "existing_evidence": [
+        "https://github.com/TheDarkLightX/Research-Kernel-MCP",
+        "https://github.com/TheDarkLightX/PopperPad"
+      ]
+    },
+    {
+      "id": "software-qa",
+      "label": "Software QA, adversarial testing, and failure analysis",
+      "status": "existing_evidence",
+      "target_roles": ["QA Analyst", "Software Test Analyst", "AI QA Specialist"],
+      "modes": ["A", "V"],
+      "benchmark_ids": [],
+      "existing_evidence": [
+        "https://github.com/TheDarkLightX/MPRD",
+        "https://github.com/TheDarkLightX/ZenoDEX",
+        "https://github.com/TheDarkLightX/ZenoFCIS"
+      ]
+    },
+    {
+      "id": "formal-verification",
+      "label": "Formal methods and reproducible verification",
+      "status": "strong_existing_evidence",
+      "target_roles": ["Formal Methods Engineer", "Verification Engineer", "High-Assurance Software Engineer"],
+      "modes": ["A", "V"],
+      "benchmark_ids": [],
+      "existing_evidence": [
+        "https://github.com/TheDarkLightX/MPRD",
+        "https://github.com/TheDarkLightX/ZenoDEX",
+        "https://github.com/TheDarkLightX/ZenoFCIS",
+        "https://github.com/TheDarkLightX/Formal_Methods_Philosophy"
+      ]
+    },
+    {
+      "id": "ai-workflow-engineering",
+      "label": "AI workflow and agent-system engineering",
+      "status": "strong_existing_evidence",
+      "target_roles": ["AI Workflow Specialist", "Agent Operations", "AI Automation Engineer", "Applied AI Engineer"],
+      "modes": ["A", "V"],
+      "benchmark_ids": [],
+      "existing_evidence": [
+        "https://github.com/TheDarkLightX/MPRD",
+        "https://github.com/TheDarkLightX/Helix-A-Next-Gen-Event-Driven-Multi-Agent-Platform",
+        "https://github.com/TheDarkLightX/Orchestration-Unit"
+      ]
+    },
+    {
+      "id": "technical-writing",
+      "label": "Technical writing and explanation",
+      "status": "existing_evidence",
+      "target_roles": ["Technical Writer", "AI Training Content Specialist", "Developer Education"],
+      "modes": ["U", "A"],
+      "benchmark_ids": [],
+      "existing_evidence": [
+        "https://github.com/TheDarkLightX/Formal_Methods_Philosophy",
+        "https://www.danaedwards.info/writing.html"
+      ]
+    },
+    {
+      "id": "data-analysis",
+      "label": "Data analysis and decision support",
+      "status": "benchmark_needed",
+      "target_roles": ["Data Analyst", "Operations Analyst", "AI Data Quality Analyst"],
+      "modes": ["U", "A", "V"],
+      "benchmark_ids": [],
+      "existing_evidence": []
+    },
+    {
+      "id": "search-relevance",
+      "label": "Search relevance, content rating, and rubric application",
+      "status": "benchmark_needed",
+      "target_roles": ["Search Quality Rater", "Online Data Analyst", "Content Evaluator"],
+      "modes": ["U", "V"],
+      "benchmark_ids": [],
+      "existing_evidence": []
+    }
+  ]
+}
