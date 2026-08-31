@@ -1,9 +1,17 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "candidate": {
     "name": "Dana Edwards",
     "site": "https://www.danaedwards.info/",
+    "capabilities_page": "https://www.danaedwards.info/capabilities.html",
     "github": "https://github.com/TheDarkLightX"
+  },
+  "training": {
+    "model": "one_active_goal_with_weekly_review_and_carryover",
+    "current_goal": "EVAL-001",
+    "current_brief": "CURRENT.md",
+    "current_issue": "https://github.com/TheDarkLightX/Remote-Work-Compatibility-Ledger/issues/1",
+    "new_project_rule": "select a new benchmark only after the current definition of done is met"
   },
   "evidence_modes": {
     "U": "unaided, candidate-attested unless a proctor is named",
