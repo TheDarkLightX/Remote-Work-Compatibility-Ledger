@@ -2,9 +2,23 @@
 
 A public, replayable catalogue of work capabilities.
 
-The purpose of this repository is simple: reduce the distance between **"I can do this work"** and **evidence that a reviewer can inspect quickly**.
+The purpose is simple: reduce the distance between **"I can do this work"** and **evidence a reviewer can inspect quickly**.
 
-Instead of treating a resume, title, degree, or employer brand as the primary signal, this ledger stores task-level evidence: the task, constraints, submitted output, AI-use policy, scoring rubric, verifier, and result.
+Instead of treating a resume, title, degree, or employer brand as the primary signal, this ledger stores task-level evidence: task, constraints, submitted output, AI-use policy, scoring rubric, verifier, receipt, limitations, and result.
+
+## Current training goal
+
+See **[`CURRENT.md`](CURRENT.md)**.
+
+There is one active project at a time. If it is not finished during a calendar week, it remains the active goal next week. The system is a training routine, not a deadline machine.
+
+The first active track is **EVAL-001 — LLM Regression Sentinel**, chosen from a current-market scan of recurring AI-evaluation/model-QA task primitives.
+
+- Benchmark: [`benchmarks/EVAL-001/README.md`](benchmarks/EVAL-001/README.md)
+- Rubric: [`rubrics/EVAL-001.md`](rubrics/EVAL-001.md)
+- Codex work order: [`benchmarks/EVAL-001/CODEX_WORK_ORDER.md`](benchmarks/EVAL-001/CODEX_WORK_ORDER.md)
+- Selection evidence: [`market/2026-08-31.md`](market/2026-08-31.md)
+- Routine: [`TRAINING_ROUTINE.md`](TRAINING_ROUTINE.md)
 
 ## Evidence modes
 
@@ -16,7 +30,7 @@ Every scored submission declares one of three modes.
 | **A — AI-augmented** | Candidate may use AI and automation, with the workflow disclosed. | Ability to turn AI into reliable productive leverage. |
 | **V — AI verification / supervision** | Candidate evaluates, repairs, or rejects AI-produced work. | Judgment, error detection, QA, and model supervision. |
 
-`U` is candidate-attested unless an external proctor is listed. The ledger never claims that a Git history can prove the absence of AI use.
+`U` is candidate-attested unless an external proctor is listed. Git history is not treated as proof that AI was absent.
 
 ## Recruiter path
 
@@ -24,16 +38,14 @@ A reviewer should be able to evaluate a capability in roughly 30–90 seconds:
 
 1. Open [`capabilities.json`](capabilities.json).
 2. Pick a capability relevant to the role.
-3. Open the linked benchmark/submission.
-4. Read the score and failure analysis.
-5. Run the verifier when one exists.
-6. Ask the candidate to defend or reproduce a small part live.
+3. Open one linked benchmark/submission or existing artifact.
+4. Read the score, limitations, and failure analysis if a scored result exists.
+5. Run the verifier/replay when one exists.
+6. Ask the candidate to defend or reproduce a representative part live.
 
-The deeper engineering/research portfolio remains available at <https://www.danaedwards.info/>. This repository is deliberately optimized for **task relevance and evaluation speed**.
+The deeper engineering/research portfolio remains at <https://www.danaedwards.info/>. Its recruiter-facing adapter is <https://www.danaedwards.info/capabilities.html>.
 
-## Portfolio SNR
-
-The project uses a practical signal-to-noise objective:
+## Portfolio signal-to-noise
 
 ```text
 Portfolio SNR =
@@ -41,63 +53,81 @@ Portfolio SNR =
   / reviewer time
 ```
 
-A difficult artifact that takes an hour to understand can be weaker hiring evidence than a smaller task that maps directly to a job and has an objective replay path.
+A difficult artifact that takes an hour to understand can be weaker hiring evidence than a smaller task that maps directly to paid work and has an objective replay path.
 
 ## Repository structure
 
 ```text
-benchmarks/          Public task specifications
-submissions/         Candidate work products and receipts
-rubrics/             Scoring rules
-schemas/             Machine-readable formats
-verifiers/           Deterministic checks where possible
-market/              Evidence for why a benchmark is currently valuable
-capabilities.json    Recruiter-facing capability index
+CURRENT.md          One active career-training goal and checklist
+benchmarks/         Public task specifications and Codex work orders
+submissions/        Candidate work products and receipts
+rubrics/            Public scoring rules
+schemas/            Machine-readable evidence formats
+verifiers/          Deterministic checks
+market/             Evidence for why a benchmark is currently valuable
+capabilities.json   Recruiter-facing capability index
+TRAINING_ROUTINE.md Flexible weekly career-training protocol
 ```
 
 ## Benchmark design rules
 
 A benchmark should:
 
-- map to work that appears in current remote job descriptions;
-- be small enough to inspect quickly;
+- map to task primitives appearing in plausible paid remote work;
+- be compact enough to inspect quickly;
 - have explicit success/failure criteria;
 - separate objective verification from subjective judgment;
-- record whether AI was allowed;
+- record whether AI was allowed and how it was used;
 - preserve inputs so the task is replayable;
-- contain adversarial or ambiguous cases when the real job requires judgment;
-- never manufacture a credential or claim external verification that did not occur.
+- include adversarial or ambiguous cases where the real work requires judgment;
+- test the evaluator/harness as well as the candidate output where relevant;
+- never manufacture a credential or external-verification claim.
 
-## Scoring
+## Capability status
 
-Scores use a 0–100 scale. Each rubric names its dimensions and weights. Where applicable, the ledger records:
+Use conservative states:
 
-- quality score;
-- critical-error count;
-- false-positive rate;
-- completion time;
-- verifier result;
-- AI mode (`U`, `A`, or `V`);
-- disclosure/provenance notes;
-- oral-defense status when tested.
+- `planned`
+- `in progress`
+- `completed`
+- `replayed`
+- `portfolio-ready`
+- `externally verified`
 
-A benchmark is not marked `verified` merely because a file exists. `verified` means the repository contains a reproducible check or an explicitly named external verifier/proctor.
+A file existing is not enough to call it verified.
 
 ## Weekly training loop
 
-The catalogue is intended to grow from current market demand rather than a static curriculum:
-
 ```text
-remote jobs → recurring task primitives → benchmark → training → submission → score → capability evidence
+Is current project complete?
+        │
+   no ──┴── yes
+   │          │
+carry forward  research current market
+   │          │
+next tasks     choose one highest-value gap
+   └──────┬───┘
+          ↓
+AI-augmented construction
+          ↓
+human judgment + verification
+          ↓
+replayable evidence + live defense
+          ↓
+capability map
 ```
 
-New projects should maximize expected career value per hour of candidate attention and AI/Codex usage. High-value projects are those that improve several employable capabilities at once and leave behind a compact, replayable artifact.
+The objective is **career value per unit of human attention**, not project count.
 
-## Initial focus
+## Verification infrastructure
 
-The first track targets **AI evaluation / quality assurance** because it exercises a useful combination of research, judgment, specification following, adversarial testing, structured output, and AI supervision.
+Receipts use [`schemas/receipt-v1.schema.json`](schemas/receipt-v1.schema.json) and can be checked with:
 
-See [`benchmarks/EVAL-001/README.md`](benchmarks/EVAL-001/README.md).
+```bash
+python verifiers/validate_receipt.py submissions/EVAL-001/TEMPLATE/receipt.json
+```
+
+GitHub Actions validates committed receipts when relevant evidence files change.
 
 ## Principle
 
