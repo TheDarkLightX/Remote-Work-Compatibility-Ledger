@@ -2,7 +2,7 @@
 
 ## Active project: EVAL-001 — LLM Regression Sentinel
 
-**Status:** planned / ready to build  
+**Status:** machine build implemented / human review and clean replay pending
 **Track:** AI evaluation, model QA, applied-AI reliability  
 **Evidence modes:** A (AI-augmented) + V (AI verification/supervision)  
 **Benchmark:** [`benchmarks/EVAL-001/README.md`](benchmarks/EVAL-001/README.md)  
@@ -34,20 +34,20 @@ Build a compact evaluation harness that can compare `model_A` and `model_B` acro
 
 Work through these in whatever order is efficient. There is no daily schedule.
 
-- [ ] Create the `sentinel` Python package and runnable CLI.
-- [ ] Define at least 30 evaluation cases across at least five dimensions.
-- [ ] Produce paired `model_A` / `model_B` responses for every case.
+- [x] Create the `sentinel` Python package and runnable CLI.
+- [x] Define at least 30 evaluation cases across at least five dimensions.
+- [x] Produce paired `model_A` / `model_B` responses for every case.
 - [ ] Create and personally review the gold labels/rationales.
-- [ ] Implement schema/input validation and deterministic ordering.
-- [ ] Implement per-case, per-dimension, and aggregate comparison metrics.
-- [ ] Implement a failure taxonomy.
-- [ ] Include at least one deterministic non-LLM grader.
-- [ ] Detect missing outputs, duplicate IDs, malformed JSONL, and ID misalignment.
-- [ ] Add self-tests containing planted regressions and at least one deliberately corrupted evaluator/scoring condition.
-- [ ] Generate machine-readable `results/summary.json`.
+- [x] Implement schema/input validation and deterministic ordering.
+- [x] Implement per-case, per-dimension, and aggregate comparison metrics.
+- [x] Implement a failure taxonomy.
+- [x] Include at least one deterministic non-LLM grader.
+- [x] Detect missing outputs, duplicate IDs, malformed JSONL, and ID misalignment.
+- [x] Add self-tests containing planted regressions and at least one deliberately corrupted evaluator/scoring condition.
+- [x] Generate machine-readable `results/summary.json`.
 - [ ] Generate a short `results/report.md` with a ship/no-ship/insufficient-evidence recommendation.
 - [ ] Manually inspect at least 10 disagreement/boundary cases and write `human-review.md`.
-- [ ] Record substantive AI/Codex use accurately in `receipt.json`.
+- [x] Record substantive AI/Codex use accurately in `receipt.json`.
 - [ ] Run the complete project from a clean checkout and record the reproduction commands.
 - [ ] Complete the short unaided oral-defense questions in `oral-defense.md`.
 - [ ] Score the submission conservatively against `rubrics/EVAL-001.md`.
