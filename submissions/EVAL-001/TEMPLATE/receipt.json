@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "benchmark_id": "EVAL-001",
+  "submission_id": "replace-me",
+  "evidence_mode": "A",
+  "candidate": "Dana Edwards",
+  "started_at": null,
+  "completed_at": null,
+  "elapsed_minutes": null,
+  "ai_disclosure": {
+    "used": true,
+    "tools": ["Codex"],
+    "uses": [],
+    "human_reviewed": true,
+    "notes": "Replace this template with an accurate disclosure."
+  },
+  "unaided_claims": [],
+  "proctor": null,
+  "reproduce": [
+    "replace with clean-clone reproduction command"
+  ],
+  "commit_sha": null,
+  "score": null,
+  "critical_failures": [],
+  "status": "draft",
+  "notes": "Template only; not a completed submission."
+}
