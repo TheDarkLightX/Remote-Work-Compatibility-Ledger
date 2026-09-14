@@ -33,7 +33,7 @@ The synthetic fixture currently measures `model_A` and `model_B` at 30/36 automa
 
 ## Why this remains the current goal
 
-The market scan selected this benchmark because remote AI evaluation/quality work repeatedly asks for:
+The original market scan selected this benchmark because remote AI evaluation/quality work repeatedly asks for:
 
 - explicit evaluation criteria for ambiguous qualities;
 - datasets and adversarial cases;
@@ -42,9 +42,9 @@ The market scan selected this benchmark because remote AI evaluation/quality wor
 - structured metrics and machine-readable outputs;
 - concise technical decision communication.
 
-The machine work is now largely done. The highest-value remaining work is the part that proves judgment rather than agent throughput: calibrating the gold set, attacking the evaluator, interpreting conflicting slice movement, bounding the claim, and defending the result.
+A fresh market scan on **2026-09-14** confirms that these primitives remain directly requested in current remote roles: evaluation pipelines, benchmark/gold-set design, judge calibration, drift/regression detection, failure analysis, automated graders, and AI-specific QA. The machine work is already largely done, so the highest-value remaining work is the part that proves judgment rather than agent throughput: calibrating the gold set, attacking the evaluator, interpreting conflicting slice movement, bounding the claim, and defending the result.
 
-See [`market/2026-08-31.md`](market/2026-08-31.md) for the selection evidence.
+See [`market/2026-08-31.md`](market/2026-08-31.md) for the original selection evidence and [`market/2026-09-14.md`](market/2026-09-14.md) for the current refresh.
 
 ## Active goal
 
