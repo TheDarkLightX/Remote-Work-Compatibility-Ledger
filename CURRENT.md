@@ -31,6 +31,10 @@ The pull-request validation workflow passed. The branch README reports 39/39 loc
 
 The synthetic fixture currently measures `model_A` and `model_B` at 30/36 automatically scored cases each (83.33%), while hiding a −33.33 percentage-point structured-output regression in B and a +33.33 point calibrated-uncertainty improvement. These are synthetic harness measurements, not production-model results and not a final benchmark score.
 
+### Weekly checkpoint — 2026-09-21
+
+PR #2 remains an open draft at the same machine-build head commit, and `human-review.md` still shows all Dana-owned review fields and checkboxes pending. No evidence supports graduating the project yet. The benchmark and rubric remain fit for purpose; the bottleneck is execution of the human review, interpretation, replay, and defense gates rather than another specification rewrite.
+
 ## Why this remains the current goal
 
 The original market scan selected this benchmark because remote AI evaluation/quality work repeatedly asks for:
@@ -42,9 +46,9 @@ The original market scan selected this benchmark because remote AI evaluation/qu
 - structured metrics and machine-readable outputs;
 - concise technical decision communication.
 
-A fresh market scan on **2026-09-14** confirms that these primitives remain directly requested in current remote roles: evaluation pipelines, benchmark/gold-set design, judge calibration, drift/regression detection, failure analysis, automated graders, and AI-specific QA. The machine work is already largely done, so the highest-value remaining work is the part that proves judgment rather than agent throughput: calibrating the gold set, attacking the evaluator, interpreting conflicting slice movement, bounding the claim, and defending the result.
+A fresh market scan on **2026-09-21** again confirms these primitives in current remote and contract roles: LLM/agent evaluation pipelines, high-signal test-suite design, automated regression checks, golden-set / rubric design, human calibration, reproducible failure traces, model-vs-harness diagnosis, human-in-the-loop escalation, and deployment-quality gates. The machine work is already largely done, so the highest-value remaining work is the part that proves judgment rather than agent throughput: calibrating the gold set, attacking the evaluator, interpreting conflicting slice movement, bounding the claim, and defending the result.
 
-See [`market/2026-08-31.md`](market/2026-08-31.md) for the original selection evidence and [`market/2026-09-14.md`](market/2026-09-14.md) for the current refresh.
+See [`market/2026-08-31.md`](market/2026-08-31.md) for the original selection evidence, [`market/2026-09-14.md`](market/2026-09-14.md) for the prior refresh, and [`market/2026-09-21.md`](market/2026-09-21.md) for the latest market check.
 
 ## Active goal
 
