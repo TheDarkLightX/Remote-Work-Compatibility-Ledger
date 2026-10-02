@@ -1,0 +1,51 @@
+{
+  "checked_at": "2026-10-02",
+  "executor": "OpenAI Codex",
+  "python_version": "3.12.14",
+  "repository": "https://github.com/TheDarkLightX/TauLang-Experiments",
+  "source_commit": "65ef69bdc5e6f1e479236d9dfb4d9b6d2e5302d1",
+  "scope": "Two exact public source blobs fetched through GitHub and hash-matched locally; not a full repository checkout, native Tau replay, Lean run, or cryptographic receipt verification.",
+  "runs": [
+    {
+      "command": "python scripts/run_game_table_demo.py --out results/local/game-table-demo.json",
+      "source_path": "scripts/run_game_table_demo.py",
+      "git_blob_sha": "c5fe274982669a0dea692cef4380e3a49184ebb0",
+      "source_sha256": "2829c29a5fc1f7922bf2ca88ef4b193fb33e19a8fb6c47d5022374da2b9d33bf",
+      "exit_code": 0,
+      "results": {
+        "ok": true,
+        "profile_count": 9,
+        "pruned_profile_count": 3,
+        "pruned_by_profitable_deviation": 6,
+        "safe_profiles": [
+          "contribute/reward"
+        ],
+        "pruned_safe_profiles": [
+          "contribute/reward"
+        ],
+        "tau_equivalence": {
+          "ran": false,
+          "ok": null
+        }
+      }
+    },
+    {
+      "command": "python scripts/run_incremental_execution_demo.py --out results/local/incremental-execution-demo.json",
+      "source_path": "scripts/run_incremental_execution_demo.py",
+      "git_blob_sha": "847d3ce57ff1b6f3a9228c49940ed5d39e8345a2",
+      "source_sha256": "dae6828f101d8f086323cadd28567bca1bc3bfae779cac717f3a1c361e3100c6",
+      "exit_code": 0,
+      "results": {
+        "ok": true,
+        "case_count": 6,
+        "full_eval_nodes_total": 193,
+        "incremental_recomputed_nodes_total": 31,
+        "runtime_delta_recomputed_nodes_total": 31,
+        "runtime_dependency_plan_checks": true,
+        "runtime_delta_checks": true,
+        "aggregate_node_recompute_savings_percent": 83.938
+      },
+      "limitation": "Node-count reduction in a Tau-like finite reference model; not native runtime performance."
+    }
+  ]
+}
