@@ -11,6 +11,16 @@
 
 This project remains the active goal until its definition of done is met. A new week does not replace it.
 
+## Weekly checkpoint — 2026-10-26
+
+**Decision: continue EVAL-001 unchanged.** Verified draft PR #2 is still open and unmerged; its machine-built harness is present, but `human-review.md` is still marked **PENDING HUMAN REVIEW**, all 37 `gold.jsonl` records still have `review_status = PENDING HUMAN REVIEW`, `oral-defense.md` is still **NOT STARTED / PENDING**, and `receipt.json` is still `draft` with a null score and no clean-checkout replay attestation. **No human completion or graduation is claimed.** The ten-case review gate remains the immediate bottleneck.
+
+**Friction removed this week:** a [model-blind ten-case review packet](https://github.com/TheDarkLightX/Remote-Work-Compatibility-Ledger/blob/codex/eval-001-regression-sentinel/submissions/EVAL-001/dana-v1/BLIND_REVIEW_PACKET.md) and a [separate response identity key](https://github.com/TheDarkLightX/Remote-Work-Compatibility-Ledger/blob/codex/eval-001-regression-sentinel/submissions/EVAL-001/dana-v1/BLIND_REVIEW_KEY.md) were added to the existing PR branch. Their paired synthetic responses came from the branch's fixtures, but model identity, provisional gold labels, and grader outcomes are withheld from the first-pass packet. This is AI-prepared scaffolding, not human review. Open the identity key **only after** saving an independent verdict and rationale on each pair. Then record outcomes in `human-review.md`.
+
+**Next human action:** judge `cu-006`, `cu-007`, `so-001`, `so-002`, `fg-002`, `if-001`, `rc-001`, `ta-001`, `cu-001`, and `cu-002`. For each, assess criterion adequacy, both responses, rationale, and deployment severity before comparing with the generator's expected labels. When these ten are settled, review the other 27 gold records, make the bounded release decision, complete unaided oral defense, perform clean-checkout replay, then apply the existing rubric. No new benchmark or score was created.
+
+A [2026-10-26 market checkpoint](market/2026-10-26.md) confirms continued demand for evaluator calibration, rubric design, reproducible QA, regression diagnosis, and accountable technical decisions across remote roles and contract listings. Eligibility varies; no job fit or payment is guaranteed. EVAL-001 remains a better marginal portfolio investment than another infrastructure toy project. **Carryover is automatic and penalty-free.**
+
 ## Current evidence state
 
 Codex completed the mechanical substrate on branch `codex/eval-001-regression-sentinel` at commit `2a84941d19d2445c08963a8e53aa40ddfd09f18e`.
@@ -48,7 +58,7 @@ The original market scan selected this benchmark because remote AI evaluation/qu
 
 A fresh market scan on **2026-09-21** again confirms these primitives in current remote and contract roles: LLM/agent evaluation pipelines, high-signal test-suite design, automated regression checks, golden-set / rubric design, human calibration, reproducible failure traces, model-vs-harness diagnosis, human-in-the-loop escalation, and deployment-quality gates. The machine work is already largely done, so the highest-value remaining work is the part that proves judgment rather than agent throughput: calibrating the gold set, attacking the evaluator, interpreting conflicting slice movement, bounding the claim, and defending the result.
 
-See [`market/2026-08-31.md`](market/2026-08-31.md) for the original selection evidence, [`market/2026-09-14.md`](market/2026-09-14.md) for the prior refresh, and [`market/2026-09-21.md`](market/2026-09-21.md) for the latest market check.
+See [`market/2026-08-31.md`](market/2026-08-31.md) for the original selection evidence, [`market/2026-09-14.md`](market/2026-09-14.md) for the prior refresh, and [`market/2026-09-21.md`](market/2026-09-21.md) for the September market check; see [`market/2026-10-26.md`](market/2026-10-26.md) for the newest checkpoint.
 
 ## Active goal
 
