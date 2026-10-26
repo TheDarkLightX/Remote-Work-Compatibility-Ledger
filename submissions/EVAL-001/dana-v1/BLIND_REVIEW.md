@@ -11,3 +11,10 @@ Put all actual judgments in `human-review.md`. Preserve `PENDING HUMAN REVIEW` u
 Once these ten cases are reviewed, proceed to the other 27 gold records. Then finish the unaided oral defense, the bounded decision memo and the clean-checkout replay before assigning a final score.
 
 **Why this protocol:** reading automated verdicts before deciding independently can anchor reviewers and conceal systematic lexical-grader errors. Separate an independent semantic first pass from evaluator comparison.
+
+## Ready-to-use review aids (added 2026-10-26)
+
+- [Ten-case model-blind packet](BLIND_REVIEW_PACKET.md) — complete first-pass semantic judgments on paired, anonymized responses without provisional labels or grader verdicts.
+- [Response identity key](BLIND_REVIEW_KEY.md) — **open only after** saving the independent first pass; then map the responses to `model_A` and `model_B` and compare results.
+
+These aids reduce lookup and anchoring overhead. Both are machine-prepared and do **not** constitute human review. If underlying synthetic fixtures change, regenerate the packet and key with updated bindings before use.
