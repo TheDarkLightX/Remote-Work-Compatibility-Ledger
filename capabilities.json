@@ -60,6 +60,19 @@
       ]
     },
     {
+      "id": "cryptographic-implementation-security",
+      "label": "Post-quantum cryptographic implementation security research",
+      "status": "existing_evidence",
+      "target_roles": ["Security Researcher", "Protocol Security Engineer"],
+      "modes": ["A", "V"],
+      "benchmark_ids": [],
+      "existing_evidence": [
+        "https://github.com/TheDarkLightX/Remote-Work-Compatibility-Ledger/blob/main/submissions/SQISIGN-BOUNDARY/README.md",
+        "https://github.com/TheDarkLightX/sqisign-verification-boundary/releases/tag/v0.1.0",
+        "https://github.com/SQISign/the-sqisign/issues/23"
+      ]
+    },
+    {
       "id": "formal-verification",
       "label": "Formal methods and reproducible verification",
       "status": "strong_existing_evidence",
