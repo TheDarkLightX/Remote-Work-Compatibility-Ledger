@@ -45,6 +45,8 @@ A reviewer should be able to evaluate a capability in roughly 30–90 seconds:
 
 The deeper engineering/research portfolio remains at <https://www.danaedwards.info/>. Its recruiter-facing adapter is <https://www.danaedwards.info/capabilities.html>.
 
+Recent upstream evidence: [Dafny #6558 — verified numeric conversion round trips](submissions/DAFNY-6558/README.md), merged 2026-10-25. The unscored case study covers formal contracts, compatibility decisions, maintainer review, reported verification/resource results, and a pinned replay recipe. EVAL-001 remains the current training goal.
+
 ## Portfolio signal-to-noise
 
 ```text
