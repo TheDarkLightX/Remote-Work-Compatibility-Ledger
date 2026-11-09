@@ -1,0 +1,43 @@
+name: eval001-sentinel
+
+on:
+  push:
+    paths:
+      - '.github/workflows/eval001-sentinel.yml'
+      - 'sentinel/**'
+      - 'scripts/generate_eval001_synthetic.py'
+      - 'submissions/EVAL-001/dana-v1/**'
+      - 'tests/**'
+  pull_request:
+    paths:
+      - '.github/workflows/eval001-sentinel.yml'
+      - 'sentinel/**'
+      - 'scripts/generate_eval001_synthetic.py'
+      - 'submissions/EVAL-001/dana-v1/**'
+      - 'tests/**'
+
+jobs:
+  test-and-reproduce:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.11', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Import package
+        run: python -c "import sentinel; print(sentinel.__version__)"
+      - name: Run adversarial tests
+        run: python -m unittest discover -s tests -v
+      - name: Reproduce committed machine results
+        run: |
+          python -m sentinel evaluate \
+            --evals submissions/EVAL-001/dana-v1/evals.jsonl \
+            --responses submissions/EVAL-001/dana-v1/responses.jsonl \
+            --gold submissions/EVAL-001/dana-v1/gold.jsonl \
+            --out submissions/EVAL-001/dana-v1/results
+          git diff --exit-code -- submissions/EVAL-001/dana-v1/results
+      - name: Validate receipt core invariants
+        run: python verifiers/validate_receipt.py submissions/EVAL-001/dana-v1/receipt.json

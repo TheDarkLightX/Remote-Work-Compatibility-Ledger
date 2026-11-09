@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "benchmark_id": "EVAL-001",
+  "submission_id": "dana-v1",
+  "evidence_mode": "A",
+  "candidate": "Dana Edwards",
+  "started_at": null,
+  "completed_at": null,
+  "elapsed_minutes": null,
+  "ai_disclosure": {
+    "used": true,
+    "tools": [
+      "OpenAI Codex"
+    ],
+    "uses": [
+      "Substantial implementation and debugging of the Python package, CLI, strict input validation, deterministic graders, metrics, failure taxonomy, and generated reports",
+      "Drafting of all synthetic evaluation cases, paired synthetic responses, expected conditions, and provisional gold labels",
+      "Drafting of adversarial tests, evaluator self-audit cases, and submission documentation scaffolding",
+      "Machine-side execution of the synthetic evaluation and automated tests during implementation"
+    ],
+    "human_reviewed": false,
+    "notes": "OpenAI Codex was used substantially. Dana Edwards has not yet reviewed or approved every AI-drafted expected condition or gold label. No candidate-attested unaided implementation work is claimed."
+  },
+  "unaided_claims": [],
+  "proctor": null,
+  "reproduce": [
+    "python -m sentinel evaluate --evals submissions/EVAL-001/dana-v1/evals.jsonl --responses submissions/EVAL-001/dana-v1/responses.jsonl --gold submissions/EVAL-001/dana-v1/gold.jsonl --out submissions/EVAL-001/dana-v1/results",
+    "python -m unittest discover -s tests -v",
+    "python verifiers/validate_receipt.py submissions/EVAL-001/dana-v1/receipt.json"
+  ],
+  "commit_sha": null,
+  "score": null,
+  "critical_failures": [],
+  "status": "draft",
+  "notes": "Draft machine-built substrate only. The 37-case synthetic fixture has 36 automatically scorable cases and measures model_A=30/36 and model_B=30/36. Candidate gold review, inspection of at least 10 disagreement/boundary cases, evaluator-failure analysis, final ship decision, claim boundary, unaided oral defense, clean-checkout replay, final rubric score, portfolio approval, and external verification remain pending. Same-worktree machine execution is not a clean-checkout replay claim."
+}
