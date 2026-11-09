@@ -46,6 +46,10 @@ A reviewer should be able to evaluate a capability in roughly 30–90 seconds:
 
 The deeper engineering/research portfolio remains at <https://www.danaedwards.info/>. Its recruiter-facing adapter is <https://www.danaedwards.info/capabilities.html>.
 
+Recent upstream evidence: [Dafny #6558 — verified numeric conversion round trips](submissions/DAFNY-6558/README.md), merged 2026-10-25. The unscored case study covers formal contracts, compatibility decisions, maintainer review, reported verification/resource results, and a pinned replay recipe. EVAL-001 remains the current training goal.
+
+Published research evidence: [SQIsign — cryptographic implementation security](submissions/SQISIGN-BOUNDARY/README.md). The unscored case study covers verification-boundary analysis, sanitizer testing, reproducible artifacts, and responsible disclosure. It distinguishes the original observations, the team's independently developed corrections, and subsequent third-party validation.
+
 ## Portfolio signal-to-noise
 
 ```text
