@@ -11,6 +11,16 @@
 
 This project remains the active goal until its definition of done is met. A new week does not replace it.
 
+## Weekly checkpoint — 2026-11-09
+
+**Decision: EVAL-001 stays active, unchanged and penalty-free.** Live verification on November 9: [draft PR #2](https://github.com/TheDarkLightX/Remote-Work-Compatibility-Ledger/pull/2) remains open, unmerged, and at head `6ab2b371ad54972355e73abc5589652f698b18c7`; **37 of 37** gold records remain `PENDING HUMAN REVIEW`, the canonical human-review worksheet has no candidate-checked boxes, the unaided oral defense is not started, and the receipt is still a draft with no final score or replay attestation. No completed candidate review, final release decision, or portfolio-ready status is claimed.
+
+**Highest-value next action: independent human adjudication of `cu-006` and `cu-007`.** Open the [model-blind packet](https://github.com/TheDarkLightX/Remote-Work-Compatibility-Ledger/blob/codex/eval-001-regression-sentinel/submissions/EVAL-001/dana-v1/BLIND_REVIEW_PACKET.md), and for each pair *before consulting labels, scores, or the identity key* record (1) whether the criterion is adequate, (2) verdict and semantic reason for each response, and (3) possible user impact. Then save the two candidate-owned assessments, reveal identities, investigate grader disagreements, finish the eight other priority cases and the remaining 27 gold records, and complete the final decision, bounded claim, unaided defense, and clean-checkout replay. Codex should handle transcription, bindings, reruns and test mechanics **after** the human judgments, not write the judgments or attestation.
+
+**New maintenance finding: PR #2 has merge conflicts against `main`.** The branch was 15 commits behind `main` at inspection; GitHub reported `mergeable_state: dirty`. A branch synchronization preserving the already-merged case studies and the separate machine-build evidence is warranted. This is independent of the human completion gate and must not be misrepresented as benchmark graduation.
+
+**No specification churn:** the existing [benchmark](benchmarks/EVAL-001/README.md) and [rubric](rubrics/EVAL-001.md) already define the required evidence and the portfolio-ready threshold of **80+/100 without a critical failure**. The limiting resource is candidate-owned semantic review, not new AI-generated features. Remote-work relevance remains evaluation calibration, failure diagnosis and accountable release judgment; the next-market-search/new-project branch remains conditional on actual graduation.
+
 ## Weekly checkpoint — 2026-11-02
 
 **Decision: carry EVAL-001 forward, with no penalty and no replacement.** Rechecked the live draft [PR #2](https://github.com/TheDarkLightX/Remote-Work-Compatibility-Ledger/pull/2) at head `6ab2b371ad54972355e73abc5589652f698b18c7`: open, draft, unmerged. All **37/37** `gold.jsonl` records still say `PENDING HUMAN REVIEW`; the canonical `human-review.md` has **zero** checked review boxes; `oral-defense.md` is **NOT STARTED / PENDING**; and `receipt.json` is still `draft` with `score: null`, `commit_sha: null`, and no candidate-attested replay. None of these omissions are treated as a missed-week penalty. No human work, final score, or portfolio-ready status is claimed.
