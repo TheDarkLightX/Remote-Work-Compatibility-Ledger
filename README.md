@@ -17,6 +17,7 @@ The first active track is **EVAL-001 — LLM Regression Sentinel**, chosen from 
 - Benchmark: [`benchmarks/EVAL-001/README.md`](benchmarks/EVAL-001/README.md)
 - Rubric: [`rubrics/EVAL-001.md`](rubrics/EVAL-001.md)
 - Codex work order: [`benchmarks/EVAL-001/CODEX_WORK_ORDER.md`](benchmarks/EVAL-001/CODEX_WORK_ORDER.md)
+- Machine-built draft: [`submissions/EVAL-001/dana-v1/README.md`](submissions/EVAL-001/dana-v1/README.md) — human checkpoints pending
 - Selection evidence: [`market/2026-08-31.md`](market/2026-08-31.md)
 - Routine: [`TRAINING_ROUTINE.md`](TRAINING_ROUTINE.md)
 

@@ -1,0 +1,1314 @@
+{
+  "authoritative_gold_scoring": {
+    "case_results": null,
+    "delta": null,
+    "dimensions": null,
+    "failure_taxonomy": null,
+    "model_a": null,
+    "model_b": null,
+    "status": "PENDING HUMAN REVIEW",
+    "transitions": null,
+    "warning": "Gold-authoritative scoring is withheld until every response-bound gold record is marked HUMAN REVIEWED and contains no pending judgment."
+  },
+  "boundary_cases": [
+    {
+      "case_id": "cu-007",
+      "dimension": "calibrated_uncertainty",
+      "reason": "Undefined policy term makes deterministic pass/fail unsupported."
+    }
+  ],
+  "case_results": [
+    {
+      "case_id": "cu-001",
+      "critical": false,
+      "dimension": "calibrated_uncertainty",
+      "grader": "substring",
+      "model_A": {
+        "detail": "missing required: 'insufficient evidence'; contains forbidden: 'definitely'",
+        "failure_type": "overconfidence",
+        "grader_failure_code": "substring_constraint_failure",
+        "score": 0,
+        "status": "fail"
+      },
+      "model_B": {
+        "detail": "all required substrings present; no forbidden substrings present",
+        "failure_type": null,
+        "grader_failure_code": null,
+        "score": 1,
+        "status": "pass"
+      },
+      "pair_outcome": "improvement",
+      "success_criterion": "The answer states there is insufficient evidence and avoids definitely/proves."
+    },
+    {
+      "case_id": "cu-002",
+      "critical": false,
+      "dimension": "calibrated_uncertainty",
+      "grader": "set_membership",
+      "model_A": {
+        "detail": "output is not in allowed set: 'cannot determine'",
+        "failure_type": "uncertainty_not_expressed",
+        "grader_failure_code": "set_membership_failure",
+        "score": 0,
+        "status": "fail"
+      },
+      "model_B": {
+        "detail": "output is in the allowed set",
+        "failure_type": null,
+        "grader_failure_code": null,
+        "score": 1,
+        "status": "pass"
+      },
+      "pair_outcome": "improvement",
+      "success_criterion": "The trimmed output is cannot determine."
+    },
+    {
+      "case_id": "cu-003",
+      "critical": false,
+      "dimension": "calibrated_uncertainty",
+      "grader": "substring",
+      "model_A": {
+        "detail": "all required substrings present; no forbidden substrings present",
+        "failure_type": null,
+        "grader_failure_code": null,
+        "score": 1,
+        "status": "pass"
+      },
+      "model_B": {
+        "detail": "all required substrings present; no forbidden substrings present",
+        "failure_type": null,
+        "grader_failure_code": null,
+        "score": 1,
+        "status": "pass"
+      },
+      "pair_outcome": "both_pass",
+      "success_criterion": "The answer contains both uncertain and estimate."
+    },
+    {
+      "case_id": "cu-004",
+      "critical": false,
+      "dimension": "calibrated_uncertainty",
+      "grader": "numeric_tolerance",
+      "model_A": {
+        "detail": "numeric error 0.00 within tolerance 0.001",
+        "failure_type": null,
+        "grader_failure_code": null,
+        "score": 1,
+        "status": "pass"
+      },
+      "model_B": {
+        "detail": "numeric error 0.00 within tolerance 0.001",
+        "failure_type": null,
+        "grader_failure_code": null,
+        "score": 1,
+        "status": "pass"
+      },
+      "pair_outcome": "both_pass",
+      "success_criterion": "The output is numeric and within 0.001 absolute error of 0.60."
+    },
+    {
+      "case_id": "cu-005",
+      "critical": false,
+      "dimension": "calibrated_uncertainty",
+      "grader": "regex",
+      "model_A": {
+        "detail": "regex fullmatch succeeded",
+        "failure_type": null,
+        "grader_failure_code": null,
+        "score": 1,
+        "status": "pass"
+      },
+      "model_B": {
+        "detail": "regex fullmatch succeeded",
+        "failure_type": null,
+        "grader_failure_code": null,
+        "score": 1,
+        "status": "pass"
+      },
+      "pair_outcome": "both_pass",
+      "success_criterion": "The entire output is exactly the specified bracketed interval."
+    },
+    {
+      "case_id": "cu-006",
+      "critical": false,
+      "dimension": "calibrated_uncertainty",
+      "grader": "substring",
+      "model_A": {
+        "detail": "all required substrings present; no forbidden substrings present",
+        "failure_type": null,
+        "grader_failure_code": null,
+        "score": 1,
+        "status": "pass"
+      },
+      "model_B": {
+        "detail": "all required substrings present; no forbidden substrings present",
+        "failure_type": null,
+        "grader_failure_code": null,
+        "score": 1,
+        "status": "pass"
+      },
+      "pair_outcome": "both_pass",
+      "success_criterion": "The lexical grader requires insufficient evidence; semantic stance still needs audit."
+    },
+    {
+      "case_id": "cu-007",
+      "critical": false,
+      "dimension": "calibrated_uncertainty",
+      "grader": "human_review_required",
+      "model_A": {
+        "detail": "Undefined policy term makes deterministic pass/fail unsupported.",
+        "failure_type": null,
+        "grader_failure_code": null,
+        "score": null,
+        "status": "needs_human_review"
+      },
+      "model_B": {
+        "detail": "Undefined policy term makes deterministic pass/fail unsupported.",
+        "failure_type": null,
+        "grader_failure_code": null,
+        "score": null,
+        "status": "needs_human_review"
+      },
+      "pair_outcome": "needs_human_review",
+      "success_criterion": "No deterministic label is justified until a human resolves the undefined term material."
+    },
+    {
+      "case_id": "fg-001",
+      "critical": false,
+      "dimension": "factuality_grounding",
+      "grader": "exact_match",
+      "model_A": {
+        "detail": "exact match",
+        "failure_type": null,
+        "grader_failure_code": null,
+        "score": 1,
+        "status": "pass"
+      },
+      "model_B": {
+        "detail": "exact match",
+        "failure_type": null,
+        "grader_failure_code": null,
+        "score": 1,
+        "status": "pass"
+      },
+      "pair_outcome": "both_pass",
+      "success_criterion": "The output is exactly the source-supported year 1998 after trimming edge whitespace."
+    },
+    {
+      "case_id": "fg-002",
+      "critical": false,
+      "dimension": "factuality_grounding",
+      "grader": "exact_match",
+      "model_A": {
+        "detail": "exact match",
+        "failure_type": null,
+        "grader_failure_code": null,
+        "score": 1,
+        "status": "pass"
+      },
+      "model_B": {
+        "detail": "exact mismatch: expected '2012'",
+        "failure_type": "unsupported_factual_claim",
+        "grader_failure_code": "exact_mismatch",
+        "score": 0,
+        "status": "fail"
+      },
+      "pair_outcome": "regression",
+      "success_criterion": "The output is exactly the source-supported year 2012 after trimming edge whitespace."
+    },
+    {
+      "case_id": "fg-003",
+      "critical": false,
+      "dimension": "factuality_grounding",
+      "grader": "substring",
+      "model_A": {
+        "detail": "missing required: 'conflict', '14,000'",
+        "failure_type": "source_conflict_ignored",
+        "grader_failure_code": "substring_constraint_failure",
+        "score": 0,
+        "status": "fail"
+      },
+      "model_B": {
+        "detail": "all required substrings present; no forbidden substrings present",
+        "failure_type": null,
+        "grader_failure_code": null,
+        "score": 1,
+        "status": "pass"
+      },
+      "pair_outcome": "improvement",
+      "success_criterion": "The answer explicitly states the conflict and both reported values without claiming certainty."
+    },
+    {
+      "case_id": "fg-004",
+      "critical": false,
+      "dimension": "factuality_grounding",
+      "grader": "set_membership",
+      "model_A": {
+        "detail": "output is in the allowed set",
+        "failure_type": null,
+        "grader_failure_code": null,
+        "score": 1,
+        "status": "pass"
+      },
+      "model_B": {
+        "detail": "output is in the allowed set",
+        "failure_type": null,
+        "grader_failure_code": null,
+        "score": 1,
+        "status": "pass"
+      },
+      "pair_outcome": "both_pass",
+      "success_criterion": "The trimmed output is the single allowed token pending."
+    },
+    {
+      "case_id": "fg-005",
+      "critical": false,
+      "dimension": "factuality_grounding",
+      "grader": "regex",
+      "model_A": {
+        "detail": "regex fullmatch succeeded",
+        "failure_type": null,
+        "grader_failure_code": null,
+        "score": 1,
+        "status": "pass"
+      },
+      "model_B": {
+        "detail": "regex fullmatch succeeded",
+        "failure_type": null,
+        "grader_failure_code": null,
+        "score": 1,
+        "status": "pass"
+      },
+      "pair_outcome": "both_pass",
+      "success_criterion": "The entire output matches the requested source-bound citation format."
+    },
+    {
+      "case_id": "fg-006",
+      "critical": false,
+      "dimension": "factuality_grounding",
+      "grader": "substring",
+      "model_A": {
+        "detail": "all required substrings present; no forbidden substrings present",
+        "failure_type": null,
+        "grader_failure_code": null,
+        "score": 1,
+        "status": "pass"
+      },
+      "model_B": {
+        "detail": "all required substrings present; no forbidden substrings present",
+        "failure_type": null,
+        "grader_failure_code": null,
+        "score": 1,
+        "status": "pass"
+      },
+      "pair_outcome": "both_pass",
+      "success_criterion": "The answer identifies Arbor as internal and does not invent a public launch or product name."
+    },
+    {
+      "case_id": "if-001",
+      "critical": false,
+      "dimension": "instruction_following",
+      "grader": "exact_match",
+      "model_A": {
+        "detail": "exact match",
+        "failure_type": null,
+        "grader_failure_code": null,
+        "score": 1,
+        "status": "pass"
+      },
+      "model_B": {
+        "detail": "exact mismatch: expected 'ACK'",
+        "failure_type": "exact_format_violation",
+        "grader_failure_code": "exact_mismatch",
+        "score": 0,
+        "status": "fail"
+      },
+      "pair_outcome": "regression",
+      "success_criterion": "The complete output is exactly ACK."
+    },
+    {
+      "case_id": "if-002",
+      "critical": false,
+      "dimension": "instruction_following",
+      "grader": "regex",
+      "model_A": {
+        "detail": "regex fullmatch failed for pattern '^[A-Z]{3}-[0-9]{4}$'",
+        "failure_type": "regex_format_violation",
+        "grader_failure_code": "regex_mismatch",
+        "score": 0,
+        "status": "fail"
+      },
+      "model_B": {
+        "detail": "regex fullmatch succeeded",
+        "failure_type": null,
+        "grader_failure_code": null,
+        "score": 1,
+        "status": "pass"
+      },
+      "pair_outcome": "improvement",
+      "success_criterion": "The complete output matches the requested uppercase identifier format."
+    },
+    {
+      "case_id": "if-003",
+      "critical": false,
+      "dimension": "instruction_following",
+      "grader": "substring",
+      "model_A": {
+        "detail": "all required substrings present; no forbidden substrings present",
+        "failure_type": null,
+        "grader_failure_code": null,
+        "score": 1,
+        "status": "pass"
+      },
+      "model_B": {
+        "detail": "all required substrings present; no forbidden substrings present",
+        "failure_type": null,
+        "grader_failure_code": null,
+        "score": 1,
+        "status": "pass"
+      },
+      "pair_outcome": "both_pass",
+      "success_criterion": "The answer contains alpha and beta and omits gamma."
+    },
+    {
+      "case_id": "if-004",
+      "critical": false,
+      "dimension": "instruction_following",
+      "grader": "exact_match",
+      "model_A": {
+        "detail": "exact match",
+        "failure_type": null,
+        "grader_failure_code": null,
+        "score": 1,
+        "status": "pass"
+      },
+      "model_B": {
+        "detail": "exact match",
+        "failure_type": null,
+        "grader_failure_code": null,
+        "score": 1,
+        "status": "pass"
+      },
+      "pair_outcome": "both_pass",
+      "success_criterion": "The complete output is exactly []."
+    },
+    {
+      "case_id": "if-005",
+      "critical": false,
+      "dimension": "instruction_following",
+      "grader": "set_membership",
+      "model_A": {
+        "detail": "output is in the allowed set",
+        "failure_type": null,
+        "grader_failure_code": null,
+        "score": 1,
+        "status": "pass"
+      },
+      "model_B": {
+        "detail": "output is in the allowed set",
+        "failure_type": null,
+        "grader_failure_code": null,
+        "score": 1,
+        "status": "pass"
+      },
+      "pair_outcome": "both_pass",
+      "success_criterion": "The trimmed output is the allowed and instructed token green."
+    },
+    {
+      "case_id": "if-006",
+      "critical": false,
+      "dimension": "instruction_following",
+      "grader": "regex",
+      "model_A": {
+        "detail": "regex fullmatch succeeded",
+        "failure_type": null,
+        "grader_failure_code": null,
+        "score": 1,
+        "status": "pass"
+      },
+      "model_B": {
+        "detail": "regex fullmatch succeeded",
+        "failure_type": null,
+        "grader_failure_code": null,
+        "score": 1,
+        "status": "pass"
+      },
+      "pair_outcome": "both_pass",
+      "success_criterion": "The complete output is three lowercase comma-delimited words with no spaces."
+    },
+    {
+      "case_id": "rc-001",
+      "critical": false,
+      "dimension": "reasoning_consistency",
+      "grader": "numeric_tolerance",
+      "model_A": {
+        "detail": "numeric error 0 within tolerance 0",
+        "failure_type": null,
+        "grader_failure_code": null,
+        "score": 1,
+        "status": "pass"
+      },
+      "model_B": {
+        "detail": "numeric error 1 exceeds tolerance 0",
+        "failure_type": "arithmetic_error",
+        "grader_failure_code": "numeric_out_of_tolerance",
+        "score": 0,
+        "status": "fail"
+      },
+      "pair_outcome": "regression",
+      "success_criterion": "The numeric output equals 42 exactly."
+    },
+    {
+      "case_id": "rc-002",
+      "critical": false,
+      "dimension": "reasoning_consistency",
+      "grader": "numeric_tolerance",
+      "model_A": {
+        "detail": "numeric error 0.1 exceeds tolerance 0.001",
+        "failure_type": "arithmetic_error",
+        "grader_failure_code": "numeric_out_of_tolerance",
+        "score": 0,
+        "status": "fail"
+      },
+      "model_B": {
+        "detail": "numeric error 0.0 within tolerance 0.001",
+        "failure_type": null,
+        "grader_failure_code": null,
+        "score": 1,
+        "status": "pass"
+      },
+      "pair_outcome": "improvement",
+      "success_criterion": "The numeric output is within 0.001 absolute error of 2.5."
+    },
+    {
+      "case_id": "rc-003",
+      "critical": false,
+      "dimension": "reasoning_consistency",
+      "grader": "exact_match",
+      "model_A": {
+        "detail": "exact match",
+        "failure_type": null,
+        "grader_failure_code": null,
+        "score": 1,
+        "status": "pass"
+      },
+      "model_B": {
+        "detail": "exact match",
+        "failure_type": null,
+        "grader_failure_code": null,
+        "score": 1,
+        "status": "pass"
+      },
+      "pair_outcome": "both_pass",
+      "success_criterion": "The trimmed, case-insensitive output is yes."
+    },
+    {
+      "case_id": "rc-004",
+      "critical": false,
+      "dimension": "reasoning_consistency",
+      "grader": "set_membership",
+      "model_A": {
+        "detail": "output is in the allowed set",
+        "failure_type": null,
+        "grader_failure_code": null,
+        "score": 1,
+        "status": "pass"
+      },
+      "model_B": {
+        "detail": "output is in the allowed set",
+        "failure_type": null,
+        "grader_failure_code": null,
+        "score": 1,
+        "status": "pass"
+      },
+      "pair_outcome": "both_pass",
+      "success_criterion": "The trimmed output is the allowed conclusion A_before_C."
+    },
+    {
+      "case_id": "rc-005",
+      "critical": false,
+      "dimension": "reasoning_consistency",
+      "grader": "exact_match",
+      "model_A": {
+        "detail": "exact match",
+        "failure_type": null,
+        "grader_failure_code": null,
+        "score": 1,
+        "status": "pass"
+      },
+      "model_B": {
+        "detail": "exact match",
+        "failure_type": null,
+        "grader_failure_code": null,
+        "score": 1,
+        "status": "pass"
+      },
+      "pair_outcome": "both_pass",
+      "success_criterion": "The complete output is exactly 16."
+    },
+    {
+      "case_id": "rc-006",
+      "critical": false,
+      "dimension": "reasoning_consistency",
+      "grader": "substring",
+      "model_A": {
+        "detail": "all required substrings present; no forbidden substrings present",
+        "failure_type": null,
+        "grader_failure_code": null,
+        "score": 1,
+        "status": "pass"
+      },
+      "model_B": {
+        "detail": "all required substrings present; no forbidden substrings present",
+        "failure_type": null,
+        "grader_failure_code": null,
+        "score": 1,
+        "status": "pass"
+      },
+      "pair_outcome": "both_pass",
+      "success_criterion": "The answer contains contradiction and the boundary value 79."
+    },
+    {
+      "case_id": "so-001",
+      "critical": true,
+      "dimension": "structured_output",
+      "grader": "json_structure",
+      "model_A": {
+        "detail": "JSON object satisfies key, type, and value constraints",
+        "failure_type": null,
+        "grader_failure_code": null,
+        "score": 1,
+        "status": "pass"
+      },
+      "model_B": {
+        "detail": "invalid JSON: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)",
+        "failure_type": "invalid_json",
+        "grader_failure_code": "invalid_json",
+        "score": 0,
+        "status": "fail"
+      },
+      "pair_outcome": "regression",
+      "success_criterion": "The object has exactly ok:boolean with ok=true."
+    },
+    {
+      "case_id": "so-002",
+      "critical": true,
+      "dimension": "structured_output",
+      "grader": "json_structure",
+      "model_A": {
+        "detail": "JSON object satisfies key, type, and value constraints",
+        "failure_type": null,
+        "grader_failure_code": null,
+        "score": 1,
+        "status": "pass"
+      },
+      "model_B": {
+        "detail": "wrong types: count (expected integer, got string)",
+        "failure_type": "wrong_json_type",
+        "grader_failure_code": "json_type_constraint_failure",
+        "score": 0,
+        "status": "fail"
+      },
+      "pair_outcome": "regression",
+      "success_criterion": "The object has exactly id:string and count:integer."
+    },
+    {
+      "case_id": "so-003",
+      "critical": false,
+      "dimension": "structured_output",
+      "grader": "valid_json",
+      "model_A": {
+        "detail": "valid JSON",
+        "failure_type": null,
+        "grader_failure_code": null,
+        "score": 1,
+        "status": "pass"
+      },
+      "model_B": {
+        "detail": "valid JSON",
+        "failure_type": null,
+        "grader_failure_code": null,
+        "score": 1,
+        "status": "pass"
+      },
+      "pair_outcome": "both_pass",
+      "success_criterion": "The complete output parses as standards-compliant JSON of any type."
+    },
+    {
+      "case_id": "so-004",
+      "critical": false,
+      "dimension": "structured_output",
+      "grader": "json_structure",
+      "model_A": {
+        "detail": "JSON object satisfies key, type, and value constraints",
+        "failure_type": null,
+        "grader_failure_code": null,
+        "score": 1,
+        "status": "pass"
+      },
+      "model_B": {
+        "detail": "JSON object satisfies key, type, and value constraints",
+        "failure_type": null,
+        "grader_failure_code": null,
+        "score": 1,
+        "status": "pass"
+      },
+      "pair_outcome": "both_pass",
+      "success_criterion": "The object has exactly name:string and tags:array."
+    },
+    {
+      "case_id": "so-005",
+      "critical": false,
+      "dimension": "structured_output",
+      "grader": "exact_match",
+      "model_A": {
+        "detail": "exact match",
+        "failure_type": null,
+        "grader_failure_code": null,
+        "score": 1,
+        "status": "pass"
+      },
+      "model_B": {
+        "detail": "exact match",
+        "failure_type": null,
+        "grader_failure_code": null,
+        "score": 1,
+        "status": "pass"
+      },
+      "pair_outcome": "both_pass",
+      "success_criterion": "The complete output is exactly {\"status\":\"ok\"}."
+    },
+    {
+      "case_id": "so-006",
+      "critical": false,
+      "dimension": "structured_output",
+      "grader": "json_structure",
+      "model_A": {
+        "detail": "JSON object satisfies key, type, and value constraints",
+        "failure_type": null,
+        "grader_failure_code": null,
+        "score": 1,
+        "status": "pass"
+      },
+      "model_B": {
+        "detail": "JSON object satisfies key, type, and value constraints",
+        "failure_type": null,
+        "grader_failure_code": null,
+        "score": 1,
+        "status": "pass"
+      },
+      "pair_outcome": "both_pass",
+      "success_criterion": "The object has exactly active:boolean and retries:integer; booleans are not integers."
+    },
+    {
+      "case_id": "ta-001",
+      "critical": false,
+      "dimension": "tool_api_arguments",
+      "grader": "exact_match",
+      "model_A": {
+        "detail": "exact match",
+        "failure_type": null,
+        "grader_failure_code": null,
+        "score": 1,
+        "status": "pass"
+      },
+      "model_B": {
+        "detail": "exact mismatch: expected '{\"tool\":\"weather\",\"location\":\"Boston, MA\",\"days\":3}'",
+        "failure_type": "wrong_argument_value",
+        "grader_failure_code": "exact_mismatch",
+        "score": 0,
+        "status": "fail"
+      },
+      "pair_outcome": "regression",
+      "success_criterion": "The complete output exactly matches the specified minified tool call."
+    },
+    {
+      "case_id": "ta-002",
+      "critical": false,
+      "dimension": "tool_api_arguments",
+      "grader": "json_structure",
+      "model_A": {
+        "detail": "missing keys: query",
+        "failure_type": "missing_required_argument",
+        "grader_failure_code": "json_key_constraint_failure",
+        "score": 0,
+        "status": "fail"
+      },
+      "model_B": {
+        "detail": "JSON object satisfies key, type, and value constraints",
+        "failure_type": null,
+        "grader_failure_code": null,
+        "score": 1,
+        "status": "pass"
+      },
+      "pair_outcome": "improvement",
+      "success_criterion": "The object has exactly the required keys/types and the specified argument values."
+    },
+    {
+      "case_id": "ta-003",
+      "critical": false,
+      "dimension": "tool_api_arguments",
+      "grader": "numeric_tolerance",
+      "model_A": {
+        "detail": "numeric error 0 within tolerance 0",
+        "failure_type": null,
+        "grader_failure_code": null,
+        "score": 1,
+        "status": "pass"
+      },
+      "model_B": {
+        "detail": "numeric error 0 within tolerance 0",
+        "failure_type": null,
+        "grader_failure_code": null,
+        "score": 1,
+        "status": "pass"
+      },
+      "pair_outcome": "both_pass",
+      "success_criterion": "The numeric output equals 30 exactly."
+    },
+    {
+      "case_id": "ta-004",
+      "critical": false,
+      "dimension": "tool_api_arguments",
+      "grader": "set_membership",
+      "model_A": {
+        "detail": "output is in the allowed set",
+        "failure_type": null,
+        "grader_failure_code": null,
+        "score": 1,
+        "status": "pass"
+      },
+      "model_B": {
+        "detail": "output is in the allowed set",
+        "failure_type": null,
+        "grader_failure_code": null,
+        "score": 1,
+        "status": "pass"
+      },
+      "pair_outcome": "both_pass",
+      "success_criterion": "The trimmed output is the one allowed enum token read_only."
+    },
+    {
+      "case_id": "ta-005",
+      "critical": false,
+      "dimension": "tool_api_arguments",
+      "grader": "regex",
+      "model_A": {
+        "detail": "regex fullmatch succeeded",
+        "failure_type": null,
+        "grader_failure_code": null,
+        "score": 1,
+        "status": "pass"
+      },
+      "model_B": {
+        "detail": "regex fullmatch succeeded",
+        "failure_type": null,
+        "grader_failure_code": null,
+        "score": 1,
+        "status": "pass"
+      },
+      "pair_outcome": "both_pass",
+      "success_criterion": "The complete output matches the specified ISO date."
+    },
+    {
+      "case_id": "ta-006",
+      "critical": false,
+      "dimension": "tool_api_arguments",
+      "grader": "substring",
+      "model_A": {
+        "detail": "all required substrings present; no forbidden substrings present",
+        "failure_type": null,
+        "grader_failure_code": null,
+        "score": 1,
+        "status": "pass"
+      },
+      "model_B": {
+        "detail": "all required substrings present; no forbidden substrings present",
+        "failure_type": null,
+        "grader_failure_code": null,
+        "score": 1,
+        "status": "pass"
+      },
+      "pair_outcome": "both_pass",
+      "success_criterion": "The answer contains target=staging and dry_run=true and omits force=true."
+    }
+  ],
+  "cases": 37,
+  "critical_failures": [
+    {
+      "case_id": "so-001",
+      "detail": "invalid JSON: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)",
+      "dimension": "structured_output",
+      "failure_type": "invalid_json",
+      "grader_failure_code": "invalid_json",
+      "model": "model_B",
+      "success_criterion": "The object has exactly ok:boolean with ok=true."
+    },
+    {
+      "case_id": "so-002",
+      "detail": "wrong types: count (expected integer, got string)",
+      "dimension": "structured_output",
+      "failure_type": "wrong_json_type",
+      "grader_failure_code": "json_type_constraint_failure",
+      "model": "model_B",
+      "success_criterion": "The object has exactly id:string and count:integer."
+    }
+  ],
+  "dataset": {
+    "all_cases_synthetic": true,
+    "automatic_coverage": 0.972973,
+    "automatically_scorable_cases": 36,
+    "case_count": 37,
+    "dimension_count": 6,
+    "grader_counts": {
+      "exact_match": 8,
+      "human_review_required": 1,
+      "json_structure": 5,
+      "numeric_tolerance": 4,
+      "regex": 5,
+      "set_membership": 5,
+      "substring": 8,
+      "valid_json": 1
+    },
+    "human_review_required_cases": 1,
+    "synthetic_case_count": 37
+  },
+  "delta": 0.0,
+  "dimensions": {
+    "calibrated_uncertainty": {
+      "cases": 7,
+      "delta": 0.333333,
+      "model_A": {
+        "failed": 2,
+        "label": "model_A",
+        "needs_human_review": 1,
+        "overall": 0.666667,
+        "passed": 4,
+        "scored": 6,
+        "total": 7
+      },
+      "model_B": {
+        "failed": 0,
+        "label": "model_B",
+        "needs_human_review": 1,
+        "overall": 1.0,
+        "passed": 6,
+        "scored": 6,
+        "total": 7
+      },
+      "transitions": {
+        "case_ids": {
+          "both_fail": [],
+          "both_pass": [
+            "cu-003",
+            "cu-004",
+            "cu-005",
+            "cu-006"
+          ],
+          "improvement": [
+            "cu-001",
+            "cu-002"
+          ],
+          "needs_human_review": [
+            "cu-007"
+          ],
+          "regression": []
+        },
+        "counts": {
+          "both_fail": 0,
+          "both_pass": 4,
+          "improvement": 2,
+          "needs_human_review": 1,
+          "regression": 0
+        }
+      }
+    },
+    "factuality_grounding": {
+      "cases": 6,
+      "delta": 0.0,
+      "model_A": {
+        "failed": 1,
+        "label": "model_A",
+        "needs_human_review": 0,
+        "overall": 0.833333,
+        "passed": 5,
+        "scored": 6,
+        "total": 6
+      },
+      "model_B": {
+        "failed": 1,
+        "label": "model_B",
+        "needs_human_review": 0,
+        "overall": 0.833333,
+        "passed": 5,
+        "scored": 6,
+        "total": 6
+      },
+      "transitions": {
+        "case_ids": {
+          "both_fail": [],
+          "both_pass": [
+            "fg-001",
+            "fg-004",
+            "fg-005",
+            "fg-006"
+          ],
+          "improvement": [
+            "fg-003"
+          ],
+          "needs_human_review": [],
+          "regression": [
+            "fg-002"
+          ]
+        },
+        "counts": {
+          "both_fail": 0,
+          "both_pass": 4,
+          "improvement": 1,
+          "needs_human_review": 0,
+          "regression": 1
+        }
+      }
+    },
+    "instruction_following": {
+      "cases": 6,
+      "delta": 0.0,
+      "model_A": {
+        "failed": 1,
+        "label": "model_A",
+        "needs_human_review": 0,
+        "overall": 0.833333,
+        "passed": 5,
+        "scored": 6,
+        "total": 6
+      },
+      "model_B": {
+        "failed": 1,
+        "label": "model_B",
+        "needs_human_review": 0,
+        "overall": 0.833333,
+        "passed": 5,
+        "scored": 6,
+        "total": 6
+      },
+      "transitions": {
+        "case_ids": {
+          "both_fail": [],
+          "both_pass": [
+            "if-003",
+            "if-004",
+            "if-005",
+            "if-006"
+          ],
+          "improvement": [
+            "if-002"
+          ],
+          "needs_human_review": [],
+          "regression": [
+            "if-001"
+          ]
+        },
+        "counts": {
+          "both_fail": 0,
+          "both_pass": 4,
+          "improvement": 1,
+          "needs_human_review": 0,
+          "regression": 1
+        }
+      }
+    },
+    "reasoning_consistency": {
+      "cases": 6,
+      "delta": 0.0,
+      "model_A": {
+        "failed": 1,
+        "label": "model_A",
+        "needs_human_review": 0,
+        "overall": 0.833333,
+        "passed": 5,
+        "scored": 6,
+        "total": 6
+      },
+      "model_B": {
+        "failed": 1,
+        "label": "model_B",
+        "needs_human_review": 0,
+        "overall": 0.833333,
+        "passed": 5,
+        "scored": 6,
+        "total": 6
+      },
+      "transitions": {
+        "case_ids": {
+          "both_fail": [],
+          "both_pass": [
+            "rc-003",
+            "rc-004",
+            "rc-005",
+            "rc-006"
+          ],
+          "improvement": [
+            "rc-002"
+          ],
+          "needs_human_review": [],
+          "regression": [
+            "rc-001"
+          ]
+        },
+        "counts": {
+          "both_fail": 0,
+          "both_pass": 4,
+          "improvement": 1,
+          "needs_human_review": 0,
+          "regression": 1
+        }
+      }
+    },
+    "structured_output": {
+      "cases": 6,
+      "delta": -0.333333,
+      "model_A": {
+        "failed": 0,
+        "label": "model_A",
+        "needs_human_review": 0,
+        "overall": 1.0,
+        "passed": 6,
+        "scored": 6,
+        "total": 6
+      },
+      "model_B": {
+        "failed": 2,
+        "label": "model_B",
+        "needs_human_review": 0,
+        "overall": 0.666667,
+        "passed": 4,
+        "scored": 6,
+        "total": 6
+      },
+      "transitions": {
+        "case_ids": {
+          "both_fail": [],
+          "both_pass": [
+            "so-003",
+            "so-004",
+            "so-005",
+            "so-006"
+          ],
+          "improvement": [],
+          "needs_human_review": [],
+          "regression": [
+            "so-001",
+            "so-002"
+          ]
+        },
+        "counts": {
+          "both_fail": 0,
+          "both_pass": 4,
+          "improvement": 0,
+          "needs_human_review": 0,
+          "regression": 2
+        }
+      }
+    },
+    "tool_api_arguments": {
+      "cases": 6,
+      "delta": 0.0,
+      "model_A": {
+        "failed": 1,
+        "label": "model_A",
+        "needs_human_review": 0,
+        "overall": 0.833333,
+        "passed": 5,
+        "scored": 6,
+        "total": 6
+      },
+      "model_B": {
+        "failed": 1,
+        "label": "model_B",
+        "needs_human_review": 0,
+        "overall": 0.833333,
+        "passed": 5,
+        "scored": 6,
+        "total": 6
+      },
+      "transitions": {
+        "case_ids": {
+          "both_fail": [],
+          "both_pass": [
+            "ta-003",
+            "ta-004",
+            "ta-005",
+            "ta-006"
+          ],
+          "improvement": [
+            "ta-002"
+          ],
+          "needs_human_review": [],
+          "regression": [
+            "ta-001"
+          ]
+        },
+        "counts": {
+          "both_fail": 0,
+          "both_pass": 4,
+          "improvement": 1,
+          "needs_human_review": 0,
+          "regression": 1
+        }
+      }
+    }
+  },
+  "failure_taxonomy": {
+    "model_A": {
+      "arithmetic_error": 1,
+      "missing_required_argument": 1,
+      "overconfidence": 1,
+      "regex_format_violation": 1,
+      "source_conflict_ignored": 1,
+      "uncertainty_not_expressed": 1
+    },
+    "model_B": {
+      "arithmetic_error": 1,
+      "exact_format_violation": 1,
+      "invalid_json": 1,
+      "unsupported_factual_claim": 1,
+      "wrong_argument_value": 1,
+      "wrong_json_type": 1
+    }
+  },
+  "final_decision": null,
+  "gold_review": {
+    "all_human_reviewed": false,
+    "deterministic_label_consistency": {
+      "agreements": 71,
+      "comparable_judgments": 72,
+      "consistency_rate": 0.986111,
+      "disagreements": [
+        {
+          "case_id": "cu-006",
+          "measured_status": "pass",
+          "model": "model_B",
+          "reference_outcome": "fail",
+          "reference_rationale": "AI-drafted provisional label: the required phrase is negated and followed by an unsupported causal claim; the lexical grader is misleading here. PENDING HUMAN REVIEW."
+        }
+      ],
+      "pending_judgments": 2,
+      "scope_warning": "This compares deterministic measurements with AI-drafted provisional labels. It is an evaluator-audit signal, not human judge agreement or validation."
+    },
+    "human_reviewed_cases": 0,
+    "pending_human_review_cases": 37,
+    "review_status_counts": {
+      "PENDING HUMAN REVIEW": 37
+    }
+  },
+  "grader_failure_taxonomy": {
+    "model_A": {
+      "json_key_constraint_failure": 1,
+      "numeric_out_of_tolerance": 1,
+      "regex_mismatch": 1,
+      "set_membership_failure": 1,
+      "substring_constraint_failure": 2
+    },
+    "model_B": {
+      "exact_mismatch": 3,
+      "invalid_json": 1,
+      "json_type_constraint_failure": 1,
+      "numeric_out_of_tolerance": 1
+    }
+  },
+  "input_sha256": {
+    "evals.jsonl": "143242e9130ea5992b6b8e5e285a4e74f317e56051bdd434ea231039fd4ea12f",
+    "gold.jsonl": "f15dcc370df8d9a2ec3a818b3513cf68fada020bc278aa192864e54e1cfe5146",
+    "responses.jsonl": "c964465a8bf7954f27ee6dfd57b18e950e10d2330a0ffb192db2d03c8d20eee8"
+  },
+  "judge_agreement": null,
+  "measurement_scope": "Deterministic measurements of synthetic fixtures against AI-drafted expected conditions; no production-model inference.",
+  "model_a": {
+    "failed": 6,
+    "label": "model_A",
+    "needs_human_review": 1,
+    "overall": 0.833333,
+    "passed": 30,
+    "scored": 36,
+    "total": 37
+  },
+  "model_b": {
+    "failed": 6,
+    "label": "model_B",
+    "needs_human_review": 1,
+    "overall": 0.833333,
+    "passed": 30,
+    "scored": 36,
+    "total": 37
+  },
+  "paired_sign_test": {
+    "discordant_pairs": 12,
+    "improvements": 6,
+    "regressions": 6,
+    "two_sided_p_value": 1.0,
+    "warning": "Descriptive exact sign test only. Synthetic, hand-constructed cases are not a random sample and do not support production-population inference."
+  },
+  "schema_version": "1.0",
+  "transitions": {
+    "case_ids": {
+      "both_fail": [],
+      "both_pass": [
+        "cu-003",
+        "cu-004",
+        "cu-005",
+        "cu-006",
+        "fg-001",
+        "fg-004",
+        "fg-005",
+        "fg-006",
+        "if-003",
+        "if-004",
+        "if-005",
+        "if-006",
+        "rc-003",
+        "rc-004",
+        "rc-005",
+        "rc-006",
+        "so-003",
+        "so-004",
+        "so-005",
+        "so-006",
+        "ta-003",
+        "ta-004",
+        "ta-005",
+        "ta-006"
+      ],
+      "improvement": [
+        "cu-001",
+        "cu-002",
+        "fg-003",
+        "if-002",
+        "rc-002",
+        "ta-002"
+      ],
+      "needs_human_review": [
+        "cu-007"
+      ],
+      "regression": [
+        "fg-002",
+        "if-001",
+        "rc-001",
+        "so-001",
+        "so-002",
+        "ta-001"
+      ]
+    },
+    "counts": {
+      "both_fail": 0,
+      "both_pass": 24,
+      "improvement": 6,
+      "needs_human_review": 1,
+      "regression": 6
+    }
+  },
+  "validation": {
+    "expected_gold_records": 37,
+    "expected_response_pairs": 74,
+    "status": "passed"
+  }
+}
